@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+  <style>
+  		body{
+  			background-color: #425D7A;
+  		}
+        figure{
+            font-family: "Microsoft Yahei";
+            text-align: center;
+        }
+        figcaption{
+            font-size: 50px;
+        }
+        .player{
+            width: 720px;
+            height: 360px;
+            /* border: 1px solid red; */
+            margin:50px auto;
+            background-color: #000;
+            border-radius: 9px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        video{
+            height: 100%;
+            display: block;
+            margin:0 auto;
+        }
+        
+        .controls{
+            width: 700px;
+            height: 40px;
+            background-color: rgba(255, 255, 0, 0.4);
+            position: absolute;
+            left:10px;
+            bottom:10px;
+            border-radius: 8px;
+        }
+
+        .play-btn{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left:10px;
+            top:10px;
+
+            line-height: 20px;
+            text-align: center;
+            font-size: 20px;
+            color:red;
+        }
+        /* 进度条*/
+        .progress{
+            position: absolute;
+            width: 440px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.4);
+            left:40px;
+            top:15px;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        /*当前进度*/
+        .curr-progress{
+            height: 100%;
+            background-color: #fff;
+            width: 0%;
+        }
+        /*时间*/
+        .time{
+            width: 120px;
+            height: 20px;
+            /* background-color: red; */
+            left:500px;
+            top:10px;
+            position: absolute;
+            font-size:12px;
+            color:#fff;
+            line-height: 20px;
+        }
+
+        /* 全屏*/
+        .extend{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top:10px;
+            right:20px;
+
+            line-height: 20px;
+            text-align: center;
+            font-size: 20px;
+            color:red;
+        }
+
+    </style>
+    </head>
+    <body>
+		
+		<!-- 媒体标签 -->
+		<figure>
+			<!-- 媒体标题 -->
+			<figcaption>My video</figcaption>
+				<div class="player">
+
+					<video src="fun.mp4"></video>
+
+					<div class="controls">
+						<!-- 播放按钮 -->
+						<a href="#" class="play-btn icon-play"></a>
+						<!-- 进度条 -->
+						<div class="progress">
+							<!-- 当前进度条 -->
+							<div class="curr-progress"></div>
+						</div>
+						<!-- 时间 -->
+						<div class="time">
+							<span class="curr-time">00:00:00</span>
+							<span class="total-time">00:00:00</span>
+						</div>
+							<!-- 全屏 -->
+							<a href="#" class="extend icon-resize-full"></a>
+					</div>
+					
+				</div>
+			
+
+		</figure>
+
+    </body>
+    	<script>
+    		//1.点击播放按钮实现视频的播放和暂停
+    		//获取元素
+    		var video = document.querySelector('video');
+    		//播放
+    		var playBtn = document.querySelector('.play-btn');
+    		//总时间
+    		var totalTime = document.querySelector('.total-time');
+    		//当前时间
+    		var currTime = document.querySelector('.curr-time');
+    		//当前进度条
+    		var currProgress = document.querySelector('.curr-progress');
+
+    		playBtn.onclick = function () {
+    			//如果视频播放 暂停，否则播放
+    			if( video.paused ) {
+    				//播放
+    				video.play();
+    			}else{
+    				video.pause();
+    			}
+    			//切换播放按钮
+    			this.classList.toggle('icon-pause');
+    		}
+
+    		var tTime = 0;
+    		//2.当视频加载完成后，获取视频的总时长并显示
+    		video.oncanplay = function () {
+    			//获取视频总时长
+    			tTime = video.duration;
+
+    			totalTime.innerHTML = changeTime(tTime);
+    		}
+    		// 当视频播放的时候，动态获取视频当前播放时间显示，并且更新进度条
+    		video.ontimeupdate = function () {
+    			//获取视频当前的播放时间
+    			var cTime = video.currentTime;
+    			//显示当前的播放时间
+    			currTime.innerHTML = changeTime(cTime);
+    			//更新进度条
+    			//当前进度条/进度条总长度=当前播放时间/视频总时长
+    			var value = cTime/tTime;
+    			currProgress.style.width = value*100+"%";
+    		}
+
+    		// 4.实现全屏播放
+    		document.querySelector('.extend').onclick = function () {
+    			video.webkitRequestFullScreen();
+    		}
+
+    		//封装的转换时间小函数
+    		
+    		function changeTime( time ) {
+    			var h = Math.floor(time/3600);
+    			var m = Math.floor(time%3600/60);
+    			var s = Math.floor(time%60);
+
+    			//转换为00:00:00
+    			h = h>=10? h :'0' + h;
+    			m = m>=10? m :'0' + m;
+    			s = s>=10? s :'0' + s;
+
+    			var t = h + ':' + m + ':' + s;
+
+    			return t;
+    		}
+
+    	</script>
+</html>
