@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body{
+            background-color: #000;
+        }
+        ul{
+            width: 500px;
+            margin:100px auto;
+        }
+
+        li{
+            width: 50px;
+            height: 50px;
+            border: 4px solid #fff;
+            border-radius: 50%;
+            margin-right:30px;
+            float: left;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+
+</ul>
+    <script>
+        //获取所有的li
+        var lis = document.querySelectorAll('li');
+        //定义所需的颜色
+        var colors = ['#000','red','blue','#daa520','#123456'];
+        //遍历 给每个li设置一个颜色
+        for(var i = 0; i < lis.length; i++){
+            lis[ i ].style.background = colors[ i ];
+            lis[ i ].index = i;
+            //给所有li绑定事件
+            lis[ i ].onclick = function (){
+                //改变body的背景颜色
+                document.body.style.background = colors[this.index];
+                //把当前颜色存储到本地,方便下次取值
+                localStorage.setItem('color',colors[this.index]);
+            }
+        }
+        //当下次页面加载完成后，取出本地color值赋给body
+        window.onload = function () {
+            document.body.style.background = localStorage.getItem('color');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽案例</title>
+    <style>
+        .box1,.target{
+            width: 400px;
+            height: 400px;
+            border: 1px solid #000;
+        }
+
+        span{
+            width: 100px;
+            height: 100px;
+            background-color:pink;
+            border-radius: 50%;
+            float:left;
+            text-align: center;
+            line-height: 100px;
+
+        }
+        .target{
+            position:absolute;
+            left:600px;
+            top:100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <span draggable="true">1</span>
+        <span draggable="true">2</span>
+        <span draggable="true">3</span>
+        <span draggable="true">4</span>
+        <span draggable="true">5</span>
+        <span draggable="true">6</span>
+        <span draggable="true">7</span>
+        <span draggable="true">8</span>
+        <span draggable="true">9</span>
+        <span draggable="true">10</span>
+    </div>
+    <div class="target">
+        
+    </div>
+
+    <script>
+            //用于记录当前拖拽的元素
+        var current = null;
+
+        var target = document.querySelector('.target');
+        
+        var spans = document.querySelectorAll('span');
+        //给所有的span绑定拖拽开始事件
+        
+        for(var i = 0; i < spans.length; i++){
+            spans[i].ondragstart = function (){
+                //记录当前拖拽的元素
+                current = this;
+                console.log(current);
+            }
+        }
+
+        //阻止默认行为
+        target.ondragover = function (e){
+            e.preventDefault();
+        }
+        //给target绑定drop事件
+        target.ondrop = function (){
+            //把当前拖拽的元素追加给target
+            target.appendChild(current);
+        }
+
+
+    </script>
+</body>
+</html>
