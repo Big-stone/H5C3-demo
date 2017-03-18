@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>地理定位</title>
+</head>
+<body>
+    <!--通过h5提供的地理定位api获取自己的位置-->
+
+    <script>
+        //navigator  h5新增的对象，用于获取用户的地理位置信息
+        //geolocation:地理定位
+
+        //兼容性处理
+        if(navigator.geolocation){
+            // success:获取位置成功时调用的函数
+            // error:获取位置出错时调用的函数
+            navigator.geolocation.getCurrentPosition( success, error);
+        }else{
+            alert('你的浏览器不支持定位功能')
+        }
+
+        function success( position ){
+            console.log('定位成功');
+            //经纬度
+            var loT = position.coords.longitude;//经度
+            var laT = position.coords.latitude;//纬度
+
+            console.log( loT + '---' + laT);
+        }
+
+       function error( error ){
+           console.log('定位失败');
+           console.log(error);
+       }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>文件操作-图片</title>
+</head>
+<body>
+    <input type="file">
+    <img src="" alt="图片">
+
+    <script>
+        //监听文件域状态的事件
+        document.querySelector('input').onchange = function(){
+            //拿到选中的文件
+            var file = this.files[0];
+            console.log(this.file);
+
+            //读取选中的图片
+            var reader = new FileReader();
+
+            //调用FileReader的读取文件的方法读取文件的路径
+            reader.readAsDataURL(file);
+
+            reader.onload = function () {
+                console.log(reader.result);
+
+                //把获取的图片路径赋值给img的src
+                document.querySelector('img').src = reader.result;
+            }
+        }
+    </script>
+</body>
+</html>

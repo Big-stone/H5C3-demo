@@ -1,0 +1,20 @@
+CACHE MANIFEST
+
+#标注释
+
+#以下写要缓存的文件
+
+CACHE:
+    https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1489856795032&di=13220ca22e29475af6783108527fff8c&imgtype=0&src=http%3A%2F%2Fwww.zhidao91.com%2Fwp-content%2Fuploads%2F2015%2F12%2Fsemantica_coder-1024x640.jpg
+
+#以下是必须联网才能访问的资源
+
+NETWORK:
+https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1489856901019&di=f223da9877247594419db1e86c8a3109&imgtype=0&src=http%3A%2F%2Fimages.cnitblog.com%2Fblog%2F553942%2F201310%2F02115852-f054f0c441254b39a93366c6058efc17.jpg
+
+#当前资源无法访问时,指定替换的资源
+
+FALLBACK:
+
+    img1.png   img2.png
+    当img1.png无法访问时，有img2.png代替
