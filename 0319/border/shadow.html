@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>边框阴影</title>
+
+    <style>
+        body{
+            background: #eee;
+        }
+        .box1{
+            width: 200px;
+            height: 300px;
+            margin:100px auto;
+            background-color:#fff;
+            box-shadow:12px 18px 30px 5px #333
+            /*边框阴影:水平位移 垂直位移 模糊程度 阴影大小 颜色*/
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            background-color:#fff;
+            border-radius:50%;
+            box-shadow:-25px -31px 119px -5px #000 inset;
+
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="box1"></div>
+
+    <div class="box2"></div>
+</body>
+</html>
