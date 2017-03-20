@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>立体导航</title>
+    <style>
+        body{
+            background-color: #eee;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul{
+            width: 900px;
+            height: 80px;
+            margin: 100px auto;
+            position: relative;
+        }
+        ul::before,
+        ul::after{
+            content: "";
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            background-color: #ccc;
+            left: -80px;
+            top: 0;
+        }
+        ul::after{
+            left: auto;
+            right: -80px;
+        }
+        li{
+            width: 180px;
+            height: 80px;
+            float:left;
+        }
+        li span{
+            height: 80px;
+            background-color:#ccc;
+            width: 30px;
+            float: left;
+        }
+        li .center{
+            width: 120px;
+            background-color: #ccc;
+            text-align: center;
+            line-height: 80px;
+            font-size: 22px;
+            font-family:'Microsoft Yahei'; 
+        }
+        li:hover .left{
+            transform:skew(0deg, -30deg);
+            transform-origin: left;
+            background-color:#bbb; 
+        }
+        li:hover .right{
+            transform: skew(0deg,30deg);
+            transform-origin:right; 
+            background-color: #bbb;
+        }
+        li:hover .center{
+            transform: translate(0,-17px);
+
+            text-shadow:5px 5px 3px #666;
+
+            box-shadow:0px 10px 20px -5px #666;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <span class="left"></span>
+            <span class="center">立体导航</span>
+            <span class="right"></span>
+        </li>
+        <li>
+            <span class="left"></span>
+            <span class="center">立体导航</span>
+            <span class="right"></span>
+        </li>
+        <li>
+            <span class="left"></span>
+            <span class="center">立体导航</span>
+            <span class="right"></span>
+        </li>
+        <li>
+            <span class="left"></span>
+            <span class="center">立体导航</span>
+            <span class="right"></span>
+        </li>
+        <li>
+            <span class="left"></span>
+            <span class="center">立体导航</span>
+            <span class="right"></span>
+        </li> 
+    </ul>
+</body>
+</html>

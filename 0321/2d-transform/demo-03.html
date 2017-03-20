@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>扑克牌案例</title>
+    <style>
+        body{
+            background-color: deepskyblue;
+        }
+        .pk{
+            width: 310px;
+            height: 441px;
+            margin: 50px auto;
+            position: relative;
+        }
+        .pk img{
+            position:absolute;
+            left: 0;
+            top: 0;
+            transition: all 1s;
+            transform-origin:center bottom;
+            box-shadow: 0 0 3px 0 #666;
+        }
+                .pk:hover img:nth-child(6){
+            transform:rotate(-10deg);
+        }
+
+        .pk:hover img:nth-child(5){
+            transform:rotate(-20deg);
+        }
+
+        .pk:hover img:nth-child(4){
+            transform:rotate(-30deg);
+        }
+
+        .pk:hover img:nth-child(3){
+            transform:rotate(-40deg);
+        }
+
+        .pk:hover img:nth-child(2){
+            transform:rotate(-50deg);
+        }
+
+        .pk:hover img:nth-child(1){
+            transform:rotate(-60deg);
+        }
+
+        .pk:hover img:nth-child(8){
+            transform:rotate(10deg);
+        }
+
+        .pk:hover img:nth-child(9){
+            transform:rotate(20deg);
+        }
+
+
+        .pk:hover img:nth-child(10){
+            transform:rotate(30deg);
+        }
+
+        .pk:hover img:nth-child(11){
+            transform:rotate(40deg);
+        }
+
+        .pk:hover img:nth-child(12){
+            transform:rotate(50deg);
+        }
+
+        .pk:hover img:nth-child(13){
+            transform:rotate(60deg);
+        }
+    </style>
+</head>
+<body>
+        <div class="pk">
+        <img src="images/pk2.png" alt=""/>
+        <img src="images/pk2.png" alt=""/>
+        <img src="images/pk2.png" alt=""/>
+        <img src="images/pk2.png" alt=""/>
+        <img src="images/pk2.png" alt=""/>
+        <img src="images/pk2.png" alt=""/>
+        <img src="images/pk2.png" alt=""/>
+        <img src="images/pk2.png" alt=""/>
+        <img src="images/pk2.png" alt=""/>
+        <img src="images/pk2.png" alt=""/>
+        <img src="images/pk2.png" alt=""/>
+        <img src="images/pk2.png" alt=""/>
+        <img src="images/pk2.png" alt=""/>
+    </div>
+</body>
+</html>

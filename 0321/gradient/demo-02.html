@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>渐变按钮</title>
+        <style>
+            html,body {
+                height: 100%;
+            }
+
+            body{
+                margin: 0;
+                padding: 0;
+                background-color:aliceblue; 
+            }
+            .nav{
+                width: 800px;
+                text-align: center;
+                padding-top: 50px;
+                margin: 0 auto;
+
+            }
+            .nav a{
+                display: inline-block;
+                width: 100px;
+                height: 30px;
+                text-align:center;
+                line-height: 30px;
+                font-size:14px;
+                color: #000;
+                text-decoration:none;
+                border: 1px solid #e59500;
+                background-color:#ffb700; 
+                background-image:linear-gradient(
+                    to bottom,
+                    #ffb700 0%,
+                    #ff8c00 100%
+                );
+            }
+
+            .nav a:hover{
+                background-color:#ffcb48;
+                background-image: linear-gradient(
+                    to bottom,
+                    #ffcb48 0%,
+                    green 100%
+                );
+
+            }
+        </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="javascript:;">按钮1</a>
+        <a href="javascript:;">按钮2</a>
+        <a href="javascript:;">按钮3</a>
+        <a href="javascript:;">按钮4</a>
+        <a href="javascript:;">按钮5</a>
+        <a href="javascript:;">按钮6</a>
+
+    </div>
+</body>
+</html>
