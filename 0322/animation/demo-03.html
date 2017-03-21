@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>step的应用</title>
+    <style>
+        body{
+            background-color: deepskyblue;
+        }
+        div{
+            width: 4px;
+            height: 150px;
+            background-color: red;
+            margin: 100px auto;
+            animation: move 60s steps(60);
+
+            /*变换中心*/
+            transform-origin: center bottom; 
+
+        }
+        @keyframes move{
+            0%{
+                transform: rotate(0deg);
+            }
+
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>

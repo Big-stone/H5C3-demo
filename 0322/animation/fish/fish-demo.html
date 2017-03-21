@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>fish</title>
+    <style>
+        body{
+            background-color: skyblue;
+        }
+        .move{
+            width: 509px;
+            height: 270px;
+            /*margin: 100px;*/
+            animation: move 10s infinite;
+
+        }
+
+        .fish{
+            width: 509px;
+            height: 270px;
+            background: url(./shark1.png);
+            animation: fish 1s steps(8) infinite ;
+        }
+
+        @keyframes fish{
+              0%{
+                background-position: left top;
+            }
+
+            100%{
+                background-position: left -2160px;
+            }
+        }
+
+        @keyframes move{
+
+            0%{
+                transform: translate(-500px,0px);
+            }
+            100%{
+                transform: translate(1850px,0px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="move">
+        <div class="fish">
+        </div>
+    </div>
+</body>
+</html>

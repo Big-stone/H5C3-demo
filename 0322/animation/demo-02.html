@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动画语法详解</title>
+    <style>
+        body{
+            background-color: deepskyblue;
+        }
+        div{
+            width: 150px;
+            height: 150px;
+            background-color: pink;
+            margin: 100px;
+
+            /*动画名称*/
+            animation-name: move;
+
+            /*单次动画的执行时间*/
+            animation-duration: 1s;
+
+            /*动画的执行次数 infinite无数次*/
+            animation-iteration-count:1;
+
+            /*动画的执行方向 alternate让动画反方向执行*/
+            animation-direction: alternate;
+
+            /*动画结束后盒子保持的状态*/
+            /* backwards:保持动画开始前的状态*/
+            /* forwards:保持动画结束后的状态*/
+            animation-fill-mode: forwards;
+
+            /*动画延迟*/
+            animation-delay: 1s;
+
+            /*运动曲线*/
+            /* linear 匀速*/
+            /*ease-in-out 先加速后减速*/
+            /*steps()  让动画分步执行*/
+            animation-timing-function: steps(3);
+        }
+        /*定义动画*/
+        @keyframes move{
+            0%{
+                transform: translateX(0px) rotate(0deg);
+            }
+
+            100%{
+                transform: translate(400px) rotate(345deg)
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>
