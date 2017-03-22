@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>无缝滚动</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+     }
+     body{
+         background-color: pink;
+     }
+    .box{
+        width: 500px;
+        height: 350px;
+        border: 10px solid salmon;
+        margin: 100px auto;
+        /*溢出隐藏*/
+        overflow: hidden;
+    }
+    .box ul{
+        width: 7000px;
+
+        animation: move 10s linear infinite;
+    }
+    .box li{
+        float: left;
+    }
+    .box:hover ul{
+        /*动画暂停*/
+        animation-play-state: paused; 
+    }
+    @keyframes move{
+        0%{
+            transform: translateX(0px)
+        }
+        100%{
+            transform: translateX(-3500px);
+        }
+    }
+    </style>
+
+</head>
+<body>
+ <div class="box">
+    <ul>
+        <li><img src="images/A.jpg" alt=""></li>
+        <li><img src="images/B.jpg" alt=""></li>
+        <li><img src="images/C.jpg" alt=""></li>
+        <li><img src="images/D.jpg" alt=""></li>
+        <li><img src="images/E.jpg" alt=""></li>
+        <li><img src="images/F.jpg" alt=""></li>
+        <li><img src="images/G.jpg" alt=""></li>
+        <li><img src="images/A.jpg" alt=""></li>
+
+    </ul>
+    </div>
+</body>
+</html>
