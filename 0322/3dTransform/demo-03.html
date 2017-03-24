@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>翻转文字</title>
+    <style>
+        body{
+            background-color: deepskyblue;
+        }
+        .box{
+            width: 600px;
+            margin: 100px auto;
+        }
+        span{
+            float:left;
+            width: 100px;
+            height: 100px;
+            margin-right: 25px;
+            font-size: 100px;
+            font-family: "Microsoft Yahei";
+            position: relative;
+        }
+        span::before,
+        span::after{
+            /*在自定义的data-text属性里面取值*/
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            /*变换中心*/
+            transform-origin: left;
+            transition: all 1s;
+        }
+        span::before{
+            color: rgba(0,0,0,0.3);
+
+        }
+        span::after{
+            color: #fff;
+            transform: scale(0.95,1);
+        }
+        .box:hover span::after{
+            transform: rotateY(40deg) skew(0deg,5deg) scale(0.95,1);
+        }
+        .box:hover span::before{
+        transform: skew(0deg,20deg) scale(0.95,1);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <!--自定义属性 作用:存储数据-->
+        <span data-text="H">H</span>
+        <span data-text="5">5</span>
+        <span data-text="C">C</span>
+        <span data-text="3">3</span>
+    </div>
+</body>
+</html>
