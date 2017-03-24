@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>rotateX</title>
+    <style>
+        .rotateX{
+            width: 300px;
+            height: 226px;
+            margin: 100px auto;
+
+            /*透视:如果希望看到3d效果,需要给透视设置给变换元素的父盒子,
+                透视的值越大,效果越不明显*/ 
+
+            perspective: 130px;
+        }
+        img{
+            transition: all 2s;
+        }
+        .rotateX:hover img{
+            transform: rotateX(360deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="rotateX">
+        <img src="images/x.jpg" alt="">
+    </div>
+</body>
+</html>
